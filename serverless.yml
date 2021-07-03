@@ -1,0 +1,8 @@
+## serverless.yml with the [latest stable version of serverless-next.js](https://www.npmjs.com/package/@sls-next/serverless-component)
+
+myNextApplication:
+    component: "@sls-next/serverless-component@3.1.0"
+    ## Cloudfront cache the pages at the edge locations for 31 days. max-age=0 in combination with must-revalidate ensure browsers never cache the static pages.
+    cache-control: public, max-age=0, s-maxage=2678400, must-revalidate
+    inputs:   
+        bucketName: next-blog-serverless
